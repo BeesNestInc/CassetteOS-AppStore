@@ -1,0 +1,99 @@
+name: hieronymus
+services:
+  db:
+    cpu_shares: 90
+    command: []
+    container_name: db
+    deploy:
+      resources:
+        limits:
+          memory: 7811M
+    environment:
+      - POSTGRES_PASSWORD=ogochan
+      - POSTGRES_USER=ogochan
+    hostname: db
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U ogochan -d ogochan
+      timeout: 5s
+      interval: 5s
+      retries: 5
+    image: postgres:15
+    ports:
+      - target: 5432
+        published: "5432"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/lib/postgresql/data
+    networks:
+      - hieronymus
+    privileged: false
+    x-casaos:
+      ports:
+        - container: "5432"
+          description:
+            en_us: ""
+
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: ""
+  web:
+    cpu_shares: 90
+    command: []
+    container_name: web
+    depends_on:
+      db:
+        condition: service_healthy
+        required: true
+    deploy:
+      resources:
+        limits:
+          memory: 7811M
+    environment:
+      - HOME=/app/$AppID
+      - NODE_ENV=production
+    hostname: web
+    image: ghcr.io/waspcojp/hieronymus/hieronymus-web@sha256:2a0603b6c2a9de67334c816803cf718242b6cea0737f1f64e81005feaafdbafc
+    init: true
+    ports:
+      - target: 3010
+        published: "3010"
+        protocol: tcp
+    restart: always
+    working_dir: /app/hieronymus
+    networks:
+      - hieronymus
+    privileged: false
+    x-casaos:
+      ports:
+        - container: "3010"
+          description:
+            en_us: ""
+networks:
+  hieronymus:
+    name: hieronymus
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: web
+  author: BeesNestLLC
+  category: 会計
+  description:
+    ja_jp: Hieronymusは零細企業用のオープンソースERPシステムです。
+    en_us: Hieronymus is an open source ERP system for small businesses.
+  developer: BeesNestLLC
+  icon: https://cdn.jsdelivr.net/gh/waspcojp/hieronymus@main/public/icon-192x192.png
+  index: /
+  tagline:
+    ja_jp: Hieronymusは零細企業用のオープンソースERPシステムです。
+  port_map: "3010"
+  scheme: http
+  title:
+    en_us: Hieronymus
+    ja_jp: Hieronymus
