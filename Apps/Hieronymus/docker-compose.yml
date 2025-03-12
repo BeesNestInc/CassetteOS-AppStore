@@ -1,55 +1,9 @@
 name: hieronymus
 services:
-  db:
-    cpu_shares: 90
-    command: []
-    container_name: db
-    deploy:
-      resources:
-        limits:
-          memory: 7811M
-    environment:
-      - POSTGRES_PASSWORD=ogochan
-      - POSTGRES_USER=ogochan
-    hostname: db
-    healthcheck:
-      test:
-        - CMD-SHELL
-        - pg_isready -U ogochan -d ogochan
-      timeout: 5s
-      interval: 5s
-      retries: 5
-    image: postgres:15
-    ports:
-      - target: 5432
-        published: "5432"
-        protocol: tcp
-    restart: always
-    volumes:
-      - type: bind
-        source: /DATA/AppData/$AppID/data
-        target: /var/lib/postgresql/data
-    networks:
-      - hieronymus
-    privileged: false
-    x-casaos:
-      ports:
-        - container: "5432"
-          description:
-            en_us: ""
-
-      volumes:
-        - container: /var/lib/postgresql/data
-          description:
-            en_us: ""
   web:
     cpu_shares: 90
     command: []
     container_name: web
-    depends_on:
-      db:
-        condition: service_healthy
-        required: true
     deploy:
       resources:
         limits:
@@ -57,8 +11,13 @@ services:
     environment:
       - HOME=/app/$AppID
       - NODE_ENV=production
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_USER=hieronymus
+      - POSTGRES_PASSWORD=hieronymus
+      - POSTGRES_DATABASE=hieronymus
+      - CASSETTE_SERVER=true
     hostname: web
-    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v1.0.0
+    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v1.1.0
     init: true
     ports:
       - target: 3010
@@ -68,6 +27,8 @@ services:
     working_dir: /app/hieronymus
     networks:
       - hieronymus
+    extra_hosts:
+      - host.docker.internal:host-gateway
     privileged: false
     x-casaos:
       ports:
@@ -77,6 +38,10 @@ services:
 networks:
   hieronymus:
     name: hieronymus
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
 x-casaos:
   architectures:
     - amd64
