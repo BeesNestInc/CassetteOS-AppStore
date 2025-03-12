@@ -28,7 +28,7 @@ services:
     networks:
       - hieronymus
     extra_hosts:
-      - host.docker.internal:host-gateway
+      - host.docker.internal:172.30.0.1
     privileged: false
     x-casaos:
       ports:
