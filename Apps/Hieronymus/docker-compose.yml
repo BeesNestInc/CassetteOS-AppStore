@@ -12,9 +12,9 @@ services:
       - HOME=/app/$AppID
       - NODE_ENV=production
       - POSTGRES_HOST=host.docker.internal
-      - POSTGRES_USER=${HIERONYMUS_USER}
-      - POSTGRES_PASSWORD=${HIERONYMUS_PASSWORD}
-      - POSTGRES_DATABASE=${HIERONYMUS_DATABASE}
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DATABASE=
       - CASSETTE_SERVER=true
     hostname: web
     image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v1.1.0
