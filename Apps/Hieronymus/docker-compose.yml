@@ -16,14 +16,19 @@ services:
       POSTGRES_PASSWORD:
       POSTGRES_DATABASE:
       CASSETTE_SERVER: true
+      BACKUP_DIR: /app/backups
     hostname: web
-    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v1.1.0
+    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.0
     init: true
     ports:
       - target: 3010
         published: "3010"
         protocol: tcp
     restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/backups
+        target: /app/backups
     working_dir: /app/hieronymus
     networks:
       - hieronymus
