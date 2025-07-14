@@ -7,7 +7,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 7811M
+          memory: "7811M"
     environment:
       HOME: /app/$AppID
       NODE_ENV: production
