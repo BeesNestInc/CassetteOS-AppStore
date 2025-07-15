@@ -77,7 +77,45 @@ x-casaos:
       初期アカウント等は設定されていません。 初期ログインの時に自分でユーザ登録を行ってから使って下さい。
       ログイン後、ホーム画面上の自社情報より自社情報を作成してください。
       ![初期セットアップ](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/%E8%87%AA%E7%A4%BE%E6%83%85%E5%A0%B1%E3%81%AE%E7%99%BB%E9%8C%B2.png)
+      ## 機能ガイド
+      ### 仕訳日記帳
+      伝票入力等の基本画面です。
+      入力した伝票の閲覧、伝票の入力(修正)が可能です。
+      ![仕訳日記帳](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/%E4%BB%95%E8%A8%B3%E6%97%A5%E8%A8%98%E5%B8%B3.png)
+      伝票入力時に、貸方の金額については以下の省略入力ができます。
+      これにより、入力の手間を省くと共に入力間違いを減らすことができます。
 
+      * `=` 借方と同じ金額が貸方に入ります
+      * `-` 貸方の合計と借方の合計との差額が貸方に入ります
+
+      いずれも既に入力した値が正しくなければ、その伝票は整合性を持って間違えてしまいます。
+      これはエラーチェックが1つ減るという意味なので、両刃の剣であることに注意して使って下さい。
+      ![振替伝票入力](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/振替伝票入力.png)
+      ### 元帳
+      総勘定元帳と補助元帳が複合した画面です。  
+      科目及び補助科目毎の明細が表示されます。  
+      ここから直接伝票を修正することも可能です(新規入力はできません)。
+      ![元帳](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/元帳.png)
+      ### 銀行元帳
+      基本的には元帳画面と同じですが、預金通帳を模した表示となっています。  
+      主には会計データと預金通帳の整合を確認するためのものです。
+      ![銀行元帳](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/銀行元帳.png)
+      ### 残高試算表
+      残高試算表が確認できます。
+      ![残高試算表](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/残高試算表.png)
+      ### 法人管理
+      会計システムに出現する取引先を登録します。  
+      この情報は、次の**証票管理**で使われます。 
+      ![法人管理](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/法人管理.png)
+      ### 証憑管理
+      電子化証憑を登録できます。  
+      ここで登録した証憑は、伝票入力の時に結合させることができます。
+      伝票に証票が結合された場合、伝票明細が表示される画面で参照(ダウンロード)が可能になります。
+      ![証憑登録](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/証憑登録.png)
+      ![証憑一覧](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/証憑一覧.png)
+      ### 勘定科目管理
+      勘定科目を追加変更ができます。「削除」はできません。
+      ![勘定科目管理](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/勘定科目管理.png)
     en_us: Hieronymus is an open source ERP system for small businesses.
   developer: BeesNestLLC
   icon: https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/public/icon-192x192.png
