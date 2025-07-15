@@ -57,7 +57,8 @@ x-casaos:
   description:
     ja_jp: | 
       ## Hieronymusは中小企業用のオープンソースERPシステムです。
-      https://github.com/BeesNestInc/hieronymus
+      [GitHub](https://github.com/BeesNestInc/hieronymus)
+      [ver2.0.0リリース](https://www.beesnest-inc.com/blog/108)
 
       ### 機能
       - 基本的な会計機能(財務会計)
