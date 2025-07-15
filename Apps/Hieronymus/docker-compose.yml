@@ -76,7 +76,8 @@ x-casaos:
       ### 使い始めに
       初期アカウント等は設定されていません。 初期ログインの時に自分でユーザ登録を行ってから使って下さい。
       ログイン後、ホーム画面上の自社情報より自社情報を作成してください。
-      ![初期セットアップ](https://github.com/BeesNestInc/hieronymus/blob/main/documents/images/%E8%87%AA%E7%A4%BE%E6%83%85%E5%A0%B1%E3%81%AE%E7%99%BB%E9%8C%B2.png)
+      ![初期セットアップ](https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/%E8%87%AA%E7%A4%BE%E6%83%85%E5%A0%B1%E3%81%AE%E7%99%BB%E9%8C%B2.png)
+
     en_us: Hieronymus is an open source ERP system for small businesses.
   developer: BeesNestLLC
   icon: https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/public/icon-192x192.png
