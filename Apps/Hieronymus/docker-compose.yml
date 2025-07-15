@@ -39,7 +39,7 @@ services:
       ports:
         - container: "3010"
           description:
-            en_US: ""
+            en_us: ""
 networks:
   hieronymus:
     name: hieronymus
@@ -55,8 +55,8 @@ x-casaos:
   author: BeesNestLLC
   category: 会計
   description:
-    ja_JP: Hieronymusは零細企業用のオープンソースERPシステムです。
-    en_US: Hieronymus is an open source ERP system for small businesses.
+    ja_jp: Hieronymusは零細企業用のオープンソースERPシステムです。
+    en_us: Hieronymus is an open source ERP system for small businesses.
   developer: BeesNestLLC
   icon: https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/public/icon-192x192.png
   screenshot_link:
@@ -71,7 +71,8 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/%E9%8A%80%E8%A1%8C%E5%85%83%E5%B8%B3.png
   index: /
   tagline:
-    ja_JP: Hieronymusは零細企業用のオープンソースERPシステムです。
+    ja_jp: Hieronymusは零細企業用のオープンソースERPシステムです。
+    en_us: Hieronymus is an open source ERP system for small businesses.
   thumbnail: https://cdn.jsdelivr.net/gh/beesnestinc/hieronymus@main/documents/images/%E4%BB%95%E8%A8%B3%E6%97%A5%E8%A8%98%E5%B8%B3.png
   port_map: "3010"
   scheme: http
