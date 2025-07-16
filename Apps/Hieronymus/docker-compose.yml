@@ -11,14 +11,14 @@ services:
     environment:
       HOME: /app/$AppID
       NODE_ENV: production
-      POSTGRES_HOST: host.docker.internal
-      POSTGRES_USER:
-      POSTGRES_PASSWORD:
-      POSTGRES_DATABASE:
+      DB_HOST: host.docker.internal
+      HIERONYMUS_DB_USER:
+      HIERONYMUS_DB_PASSWORD:
+      HIERONYMUS_DB:
       CASSETTE_SERVER: true
       BACKUP_DIR: /app/backups
     hostname: web
-    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.0
+    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.1
     init: true
     ports:
       - target: 3010
