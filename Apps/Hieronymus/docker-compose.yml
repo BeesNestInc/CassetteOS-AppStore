@@ -14,6 +14,7 @@ services:
       DB_HOST: host.docker.internal
       DB_USER: 
       DB_PASSWORD: 
+      DB_NAME:
       BACKUP_DIR: /app/backups
     hostname: web
     image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.4
@@ -39,12 +40,8 @@ services:
           description:
             en_us: ""
 networks:
-  hieronymus:
-    name: hieronymus
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.30.0.0/16
+  cassetteos:
+    external: true
 x-casaos:
   architectures:
     - amd64
