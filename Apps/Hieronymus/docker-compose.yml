@@ -1,9 +1,9 @@
 name: hieronymus
 services:
-  hieronymus:
+  web:
     cpu_shares: 90
     command: []
-    container_name: hieronymus
+    container_name: web
     deploy:
       resources:
         limits:
@@ -16,7 +16,7 @@ services:
       DB_PASSWORD: 
       DB_NAME:
       BACKUP_DIR: /app/backups
-    hostname: hieronymus
+    hostname: web
     image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.4
     init: true
     ports:
