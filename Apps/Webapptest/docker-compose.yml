@@ -1,0 +1,64 @@
+name: Webapptest
+services:
+  web:
+    cpu_shares: 90
+    command: []
+    container_name: web
+    deploy:
+      resources:
+        limits:
+          memory: "4096M"
+    ports:
+      - "3000:3000"
+    environment:
+      HOME: /app/$AppID
+      DB_USER: 
+      DB_PASSWORD:
+      DB_NAME:
+      PGUSER: $DB_USER
+      PGHOST: host.docker.internal
+      PGDATABASE: $DB_NAME
+      PGPASSWORD: $DB_PASSWORD
+      PGPORT: 5432
+    hostname: web
+    image: ghcr.io/mayumigit/web-app-test:v0.0.1
+    init: true
+    restart: always
+    working_dir: /app/hieronymus
+    networks:
+      - hieronymus
+    extra_hosts:
+      - host.docker.internal:172.30.0.1
+    privileged: false
+    x-casaos:
+      ports:
+        - container: "3010"
+          description:
+            en_us: ""
+networks:
+  cassetteos:
+    external: true
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: web
+  author: BeesNestLLC
+  category: Test
+  description:
+    ja_jp: | 
+      ## 動作検証用アプリ
+    en_us: TestApp
+  developer: BeesNestLLC
+  icon: 
+  screenshot_link:
+ index: /
+  tagline:
+    ja_jp: TestApp
+    en_us: TestApp
+  thumbnail: 
+  port_map: "3000"
+  scheme: http
+  title:
+    en_US: Webapptest
+    ja_JP: Webapptest
