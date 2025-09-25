@@ -44,7 +44,7 @@ x-casaos:
     - arm64
   main: web
   author: BeesNestLLC
-  category: Test
+  category: 会計
   description:
     ja_jp: | 
       ## 動作検証用アプリ
