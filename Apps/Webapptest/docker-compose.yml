@@ -3,7 +3,6 @@ services:
   webapptest:
     cpu_shares: 90
     command: []
-    container_name: webapptest
     deploy:
       resources:
         limits:
@@ -58,5 +57,5 @@ x-casaos:
   port_map: "3000"
   scheme: http
   title:
-    en_US: Webapptest
-    ja_JP: Webapptest
+    en_us: Webapptest 
+    ja_jp: Webapptest
