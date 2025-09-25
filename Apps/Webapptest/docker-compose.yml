@@ -50,8 +50,6 @@ x-casaos:
       ## 動作検証用アプリ
     en_us: TestApp
   developer: BeesNestLLC
-  icon: 
-  screenshot_link:
  index: /
   tagline:
     ja_jp: TestApp
