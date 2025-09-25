@@ -14,10 +14,10 @@ services:
       DB_USER: 
       DB_PASSWORD:
       DB_NAME:
-      PGUSER: $DB_USER
+      PGUSER: ${DB_USER}
       PGHOST: host.docker.internal
-      PGDATABASE: $DB_NAME
-      PGPASSWORD: $DB_PASSWORD
+      PGDATABASE: ${DB_NAME}
+      PGPASSWORD: ${DB_PASSWORD}
       PGPORT: 5432
     hostname: webapptest
     image: ghcr.io/mayumigit/web-app-test:0.0.2
