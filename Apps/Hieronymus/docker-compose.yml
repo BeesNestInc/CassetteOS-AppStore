@@ -30,7 +30,7 @@ services:
         target: /app/backups
     working_dir: /app/hieronymus
     networks:
-      - hieronymus
+      - cassetteos
     extra_hosts:
       - host.docker.internal:172.30.0.1
     privileged: false
