@@ -50,7 +50,7 @@ x-casaos:
       ## 動作検証用アプリ
     en_us: TestApp
   developer: BeesNestLLC
- index: /
+  index: /
   tagline:
     ja_jp: TestApp
     en_us: TestApp
