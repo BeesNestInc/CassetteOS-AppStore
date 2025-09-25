@@ -1,4 +1,4 @@
-name: Webapptest
+name: webapptest
 services:
   web:
     cpu_shares: 90
