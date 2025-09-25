@@ -42,7 +42,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  main: web
+  main: webapptest
   author: BeesNestLLC
   category: 会計
   description:
