@@ -12,13 +12,12 @@ services:
       HOME: /app/$AppID
       NODE_ENV: production
       DB_HOST: host.docker.internal
-      HIERONYMUS_DB_USER: ${GEN_HIERONYMUS_DB_USER}
-      HIERONYMUS_DB_PASSWORD: ${GEN_HIERONYMUS_DB_PASSWORD}
-      HIERONYMUS_DB: ${GEN_HIERONYMUS_DB}
-      CASSETTE_SERVER: true
+      DB_USER: 
+      DB_PASSWORD: 
+      DB: 
       BACKUP_DIR: /app/backups
     hostname: web
-    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.1
+    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.4
     init: true
     ports:
       - target: 3010
