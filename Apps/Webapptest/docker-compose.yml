@@ -1,9 +1,9 @@
 name: webapptest
 services:
-  web:
+  webapptest:
     cpu_shares: 90
     command: []
-    container_name: web
+    container_name: webapptest
     deploy:
       resources:
         limits:
@@ -20,7 +20,7 @@ services:
       PGDATABASE: $DB_NAME
       PGPASSWORD: $DB_PASSWORD
       PGPORT: 5432
-    hostname: web
+    hostname: webapptest
     image: ghcr.io/mayumigit/web-app-test:0.0.2
     init: true
     restart: always
