@@ -11,10 +11,10 @@ services:
       - "3000:3000"
     environment:
       HOME: /app/$AppID
-      PGUSER: ${DB_USER}
+      PGUSER: 
       PGHOST: host.docker.internal
-      PGDATABASE: ${DB_NAME}
-      PGPASSWORD: ${DB_PASSWORD}
+      PGDATABASE: 
+      PGPASSWORD:
       PGPORT: 5432
     hostname: webapptest
     image: ghcr.io/mayumigit/web-app-test:0.0.2
@@ -56,3 +56,8 @@ x-casaos:
   title:
     en_us: Webapptest 
     ja_jp: Webapptest
+x-cassetteos:
+  db-credentials:
+    user_var: "PGUSER"
+    password_var: "DB_PASSWORD"
+    db_name_var: "PGDATABASE"
