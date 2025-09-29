@@ -17,7 +17,7 @@ services:
       PGPASSWORD:
       PGPORT: 5432
     hostname: webapptest
-    image: ghcr.io/mayumigit/web-app-test:0.0.2
+    image: ghcr.io/mayumigit/web-app-test:0.0.3
     init: true
     restart: always
     working_dir: /app/web-app-test
