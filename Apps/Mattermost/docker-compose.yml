@@ -77,7 +77,7 @@ x-casaos:
   title:
     en_us: Mattermost 
     ja_jp: Mattermost
-  icon: https://github.com/mattermost/mattermost/blob/master/webapp/channels/src/images/favicon/android-chrome-192x192.png
+  icon: https://github.com/mattermost/mattermost/blob/master/webapp/channels/src/images/favicon/android-chrome-192x192.png?raw=true
 x-cassetteos:
   db-credentials:
     user_var: "PGUSER"
