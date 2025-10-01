@@ -3,7 +3,7 @@ services:
   mattermost:
     cpu_shares: 90
     command: []
-    container_name: web
+    container_name: mattermost
     deploy:
       resources:
         limits:
@@ -60,8 +60,7 @@ networks:
 x-casaos:
   architectures:
     - amd64
-    - arm64
-  main: web
+  main: mattermost
   author: BeesNestLLC
   category: 会計
   description:
