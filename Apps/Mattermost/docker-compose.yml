@@ -44,7 +44,7 @@ services:
       PGDATABASE:
       # necessary Mattermost options/variables (see env.example)
       MM_SQLSETTINGS_DRIVERNAME: postgres
-      MM_SQLSETTINGS_DATASOURCE: postgres://${PGUSER}:${PGPASSWORD}@postgres:5432/${PGDATABASE}?sslmode=disable&connect_timeout=10
+      MM_SQLSETTINGS_DATASOURCE: postgres://$${PGUSER}:$${PGPASSWORD}@postgres:5432/$${PGDATABASE}?sslmode=disable&connect_timeout=10
       # necessary for bleve
       MM_BLEVESETTINGS_INDEXDIR: /mattermost/bleve-indexes
       # additional settings
