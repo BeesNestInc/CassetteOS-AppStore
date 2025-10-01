@@ -49,6 +49,7 @@ services:
       MM_BLEVESETTINGS_INDEXDIR: /mattermost/bleve-indexes
       # additional settings
       MM_SERVICESETTINGS_SITEURL: https://mm.example.com
+      MM_SERVICESETTINGS_ALLOWCORSFROM: http://localhost:8065
     x-casaos:
       ports:
         - container: "8065"
