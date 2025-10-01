@@ -62,7 +62,7 @@ x-casaos:
   architectures:
     - amd64
   main: mattermost
-  author: Mattermost,Inc.
+  author: Mattermost, Inc.
   category: コミュニケーションツール
   description:
     ja_jp: | 
@@ -75,6 +75,7 @@ x-casaos:
   thumbnail: 
   port_map: "8065"
   scheme: http
+  developer: Mattermost, Inc.
   title:
     en_us: Mattermost 
     ja_jp: Mattermost
