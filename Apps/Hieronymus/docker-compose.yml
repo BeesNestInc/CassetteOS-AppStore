@@ -137,3 +137,8 @@ x-casaos:
   title:
     en_US: Hieronymus
     ja_JP: Hieronymus
+x-cassetteos:
+  db-credentials:
+    user_var: "DB_USER"
+    password_var: "DB_PASSWORD"
+    db_name_var: "DB_NAME"
