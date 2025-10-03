@@ -67,7 +67,6 @@ x-casaos:
   description:
     ja_jp: | 
       ## Mattermost
-      ![ロゴ](https://user-images.githubusercontent.com/7205829/137170381-fe86eef0-bccc-4fdd-8e92-b258884ebdd7.png)
   index: /
   tagline:
     ja_jp: Mattermostはオープンソースのセルフホスト型コラボレーションプラットフォームです。
@@ -79,9 +78,8 @@ x-casaos:
   title:
     en_us: Mattermost 
     ja_jp: Mattermost
-  icon: https://github.com/mattermost/mattermost/blob/master/webapp/channels/src/images/favicon/android-chrome-192x192.png?raw=true
+  icon: 
   screenshot_link:
-    - https://user-images.githubusercontent.com/7205829/136107976-7a894c9e-290a-490d-8501-e5fdbfc3785a.png
 x-cassetteos:
   db-credentials:
     user_var: "PGUSER"
