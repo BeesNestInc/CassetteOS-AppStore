@@ -3,5 +3,10 @@
     "name": "会計",
     "font": "database-the-application",
     "description": "会計アプリケーション"
+  },
+  {
+    "name": "コミュニケーションツール",
+    "font": "database-the-application",
+    "description": "コミュニケーションツール"
   }
 ]
