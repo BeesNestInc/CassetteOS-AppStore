@@ -61,7 +61,6 @@ networks:
 x-casaos:
   architectures:
     - amd64
-    - arm64
   main: mattermost
   author: Mattermost, Inc.
   category: コミュニケーションツール
