@@ -12,13 +12,12 @@ services:
       HOME: /app/$AppID
       NODE_ENV: production
       DB_HOST: host.docker.internal
-      HIERONYMUS_DB_USER: ${GEN_HIERONYMUS_DB_USER}
-      HIERONYMUS_DB_PASSWORD: ${GEN_HIERONYMUS_DB_PASSWORD}
-      HIERONYMUS_DB: ${GEN_HIERONYMUS_DB}
-      CASSETTE_SERVER: true
+      DB_USER: 
+      DB_PASSWORD: 
+      DB_NAME:
       BACKUP_DIR: /app/backups
     hostname: web
-    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.1
+    image: ghcr.io/beesnestinc/hieronymus/hieronymus-web:v2.0.4
     init: true
     ports:
       - target: 3010
@@ -31,7 +30,7 @@ services:
         target: /app/backups
     working_dir: /app/hieronymus
     networks:
-      - hieronymus
+      - cassetteos
     extra_hosts:
       - host.docker.internal:172.30.0.1
     privileged: false
@@ -41,12 +40,8 @@ services:
           description:
             en_us: ""
 networks:
-  hieronymus:
-    name: hieronymus
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.30.0.0/16
+  cassetteos:
+    external: true
 x-casaos:
   architectures:
     - amd64
@@ -142,3 +137,8 @@ x-casaos:
   title:
     en_US: Hieronymus
     ja_JP: Hieronymus
+x-cassetteos:
+  db-credentials:
+    user_var: "DB_USER"
+    password_var: "DB_PASSWORD"
+    db_name_var: "DB_NAME"
